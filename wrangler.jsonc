@@ -1,0 +1,17 @@
+{
+  // MCP d'ANT-i. Ne jamais changer « name » (le compte Cloudflare héberge d'autres sites).
+  "name": "anti-mcp",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-25",
+  "routes": [{ "pattern": "mcp.ant-i.agency", "custom_domain": true }],
+  "workers_dev": false,
+  // Valeurs publiques : adresse du projet Supabase et clé « publishable » (faite pour être publique ; la sécurité
+  // repose sur les règles de la base et sur le jeton du partenaire).
+  "vars": {
+    "SUPABASE_URL": "https://lznftgdbsqecucjpcbjm.supabase.co",
+    "SUPABASE_CLE_PUBLIQUE": "sb_publishable_Rjx3EHNb1Csf0_HOKb6RoQ_IG9oJo8c"
+  },
+  // 60 appels par minute et par compte. namespace_id : entier propre au compte Cloudflare.
+  "ratelimits": [{ "name": "LIMITE", "namespace_id": "4203", "simple": { "limit": 60, "period": 60 } }],
+  "observability": { "enabled": true }
+}

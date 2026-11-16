@@ -1,0 +1,14 @@
+{
+  "name": "anti-mcp",
+  "version": "1.0.0",
+  "description": "Serveur MCP distant d'ANT-i : les apporteurs d'affaires déclarent et suivent leurs apports depuis leur assistant IA.",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "dev": "npx --yes wrangler@4 dev",
+    "deploy": "npm test && npx --yes wrangler@4 deploy"
+  },
+  "engines": { "node": ">=20" }
+}
